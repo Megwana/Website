@@ -8,11 +8,11 @@ DB_NAME = "database.db"
 
 
 def create_app():
-    """blanket python."""
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'helloworld'
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     db.init_app(app)
+
     from .views import views
     from .auth import auth
 
@@ -22,6 +22,7 @@ def create_app():
     from .models import User, Note
 
     return app
+
 
 def create_database(app):
     if not path.exists('website/' + DB_NAME):
