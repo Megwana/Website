@@ -1,3 +1,7 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+"""import create_app from website"""
+from website import create_app
+
+app = create_app()
+
+if __name__ == '__main__':
+    app.run(debug=True)
